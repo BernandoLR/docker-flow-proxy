@@ -64,15 +64,5 @@ pipeline {
       }
     }
   }
-  post {
-    always {
-      sh "docker system prune -f"
-    }
-    failure {
-      slackSend(
-        color: "danger",
-        message: "${env.JOB_NAME} failed: ${env.RUN_DISPLAY_URL}"
-      )
-    }
-  }
+  
 }
