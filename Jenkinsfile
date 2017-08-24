@@ -1,9 +1,7 @@
 import java.text.SimpleDateFormat
 
 pipeline {
-  agent {
-    label "test"
-  }
+  agent any
   options {
     buildDiscarder(logRotator(numToKeepStr: '2'))
     disableConcurrentBuilds()
